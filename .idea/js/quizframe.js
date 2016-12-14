@@ -24,7 +24,7 @@ var mainQuiz = function(){
         var start = document.getElementById("startTheQuiz");
         start.parentNode.removeChild(start);
         makeQuizFrame();
-        question()
+        question();
 
 
 
