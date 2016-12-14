@@ -4,15 +4,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Which Trigram Are You?</title>
-    //Bootstrap
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <title>Which Warring States Philosopher Are You?</title>
+
+    <link href="./bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+
+        .container{
+            height:300px;
+            width:50%;
+            margin:0 auto;
+            border: 5px solid darkmagenta;
+            display: block;
+            border-radius: 10px;
+            margin-top:10px;
+        }
+
+        .initiated{
+            height:635px;
+            width:75%;
+            margin:0 auto;
+            border: 5px solid red;
+            border-radius: 10px;
+
+        }
+
+    </style>
+
 </head>
+
 <body>
 
+    <div id = "quizFrame">
+        <div id = "startTheQuiz">
+        <input type="button" id="startButton" class="btn btn-lg btn-primary" onclick="mainQuiz();" value ="Start the Quiz">
+        </div>
+    </div>
+
+    <script src="./js/questions.js"></script>
+    <script src="./js/quizframe.js"></script>
 
 
-//Scripts
-<script src="js/bootstrap.min.js"></script>
+<script src="./bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
 </body>
+
+<script></script>
 </html>
