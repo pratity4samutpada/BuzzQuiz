@@ -1,2 +1,2 @@
 # BuzzQuiz
-Which Trigram Are You?
+Which Buzzfeed quiz are you?
