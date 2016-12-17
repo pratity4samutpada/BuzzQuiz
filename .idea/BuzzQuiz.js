@@ -30,7 +30,7 @@ function startQuiz() {
 //Function for progress of the quiz, associated with all quiz inputs. Highest level of organization.
 function quizMain() {
     getAnswer();
-    if(questionNum===questionArray.length){
+    if (questionNum === questionArray.length) {
         displayResult(computeResult());
     }
     else {
@@ -43,53 +43,54 @@ function quizMain() {
 //Pushes user answer values to array. Allows for assorted arrangement of answers.
 function getAnswer() {
 
-        if (event.currentTarget.className === "menu") {
-            for (var i = 1; i <= 4; i++) {
-                if (event.currentTarget.value == i) {
-                    answerArray.push(i);
-                }
+    if (event.currentTarget.className === "menu") {
+        for (var i = 1; i <= 4; i++) {
+            if (event.currentTarget.value == i) {
+                answerArray.push(i);
             }
         }
-        else {
-            for (var i = 1; i <= 4; i++) {
-                var name = event.currentTarget.name;
-                if (name == i) {
-                    answerArray.push(i);
-                }
+    }
+    else {
+        for (var i = 1; i <= 4; i++) {
+            var name = event.currentTarget.name;
+            if (name == i) {
+                answerArray.push(i);
             }
         }
-        questionNum++;
+    }
+    questionNum++;
 
 
 }
 
 //Calculates result based off sum of user inputs.
-function computeResult(){
+function computeResult() {
     var sum = 0;
-    for(var i =0; i < answerArray.length; i++){
+    for (var i = 0; i < answerArray.length; i++) {
         sum = sum + parseInt(answerArray[i]);
     }
-    if (sum <=8){
+    if (sum <= 8) {
         return "Confucius";
     }
-    if (sum >8 && sum <=12){
+    if (sum > 8 && sum <= 12) {
         return "Zhuangzi";
     }
-    if (sum >12 && sum <=16){
+    if (sum > 12 && sum <= 16) {
         return "Hanfei";
     }
-    if (sum > 16){
+    if (sum > 16) {
         return "Mozi";
     }
 }
 
+//Takes string output of computeResult and produces the appropriate message and picture to the user.
 function displayResult(result) {
-    container.innerHTML="";
+    container.innerHTML = "";
     var text = document.getElementById("questionText");
     text.className = "displayResult";
     text.innerHTML = "You are " + result + "!";
     var finalImage = document.createElement("IMG");
-    var finalImageSrc = "./Images/" + result.toLowerCase() +".jpg"
+    var finalImageSrc = "./Images/" + result.toLowerCase() + ".jpg"
     finalImage.className = "resultImg";
     finalImage.setAttribute("src", finalImageSrc);
     container.appendChild(finalImage);
@@ -227,7 +228,10 @@ function generateQuestion() {
         }
     }
 
-    var ansArrayQ5 = ["try to understand their proper place in the world", "stop trying to be great", "do what they are told", "care for each other unconditionally"]
+    var ansArrayQ5 = ["try to understand their proper place in the world",
+        "stop trying to be great",
+        "do what they are told",
+        "care for each other unconditionally"]
     //Question 5
     if (questionNum === 4) {
         var select = document.createElement("select");
