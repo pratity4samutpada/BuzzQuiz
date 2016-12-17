@@ -18,16 +18,6 @@ var questionArray = ["Where would you go?",
 //Assign quizContainer to variable container for subsequent use.
 var container = document.getElementById("quizContainer");
 
-
-//Object with links that take the user to an encyclopedia entry related to their result.
-var website = {
-    Confucius:"https://plato.stanford.edu/entries/confucius/",
-    Zhuangzi:"https://plato.stanford.edu/entries/zhuangzi/",
-    Hanfei:"https://plato.stanford.edu/entries/chinese-legalism/",
-    Mozi:"https://plato.stanford.edu/entries/mohism/"
-
-}
-
 //Devoted function for the startButton, initiates the question sequence.
 function startQuiz() {
     document.body.removeChild(document.getElementById("startButton"));
@@ -100,7 +90,7 @@ function displayResult(result) {
     text.className = "displayResult";
     text.innerHTML = "You are " + result + "!";
     var finalImage = document.createElement("IMG");
-    var finalImageSrc = "./Images/" + result +".jpg"
+    var finalImageSrc = "./Images/" + result.toLowerCase() +".jpg"
     finalImage.className = "resultImg";
     finalImage.setAttribute("src", finalImageSrc);
     container.appendChild(finalImage);
