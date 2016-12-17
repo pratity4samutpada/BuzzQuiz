@@ -1,2 +1,2 @@
 # BuzzQuiz
-Which Buzzfeed quiz are you?
+Which Chinese Warring States Period philosopher are you?
