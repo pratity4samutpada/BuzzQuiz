@@ -13,23 +13,86 @@
             margin:0;
         }
 
-        .img-fluid{
-            padding: 20px,30px;
+        .question.img-fluid{
+            padding:0px;
             height:40vh;
             max-width: 100%;
             max-height: 100%;
 
+
+
+        }
+        .img-fluid:hover{
+            opacity:.5;
+            transition: 1s ease-out;
         }
 
         .container-fluid{
             margin:0;
+            text-align: center;
 
 
         }
-        container-fluid{
-            width:200px;
-            margin:10px;
+
+        .interrogate{
+            font-size: 50px;
+            position: relative;
+            top:300px;
+
+
         }
+        #questionText{
+            transition: 3s ease;
+        }
+
+        .displayResult{
+            font-size: 60px;
+
+        }
+        .resultImg{
+            height:300px;
+            border:10px solid black;
+            border-radius: 10px;
+
+        }
+
+        #quizContainer{
+        position:relative;
+        top:50px;
+        }
+
+        #quizContainer input[type="button"]{
+            margin-top:15px;
+            border: 2px solid black;
+            background-color:none;
+            height:60px;
+            width: 250px;
+            transition: 1s ease;
+        }
+
+        #quizContainer input[type="button"]:hover{
+            font-size:2em;
+        }
+
+        #startButton{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -50px;
+            margin-left: -100px;
+            width: 200px;
+            height: 100px;
+            border:5px solid black;
+            background-color:white;
+            font-size:2em;
+            font-weight: bold;
+            font-color:black;
+        }​
+
+         .btn{
+            display:block;
+                 }
+
 
     </style>
 
@@ -37,6 +100,8 @@
 
 
 <body>
+
+<input id="startButton" type = "button" value = "start the quiz" onclick="startQuiz()">
 
 <div class="container-fluid">
     <div class="row">
@@ -46,102 +111,16 @@
 </div>
 
 
-<div id="quizContainer" class="container-fluid">
-    <div class="row">
-<input class="question img-fluid col-md-6 col-sm-6 col-xs-12" onclick="quizMain()" name="1" type = "image" src ="./Images/shrine.jpg">
-<input class="question1 img-fluid col-md-6 col-sm-6 col-xs-12" onclick="quizMain()" name="4"  type = "image" src ="./Images/citywall.jpg">
-<input class="question1 img-fluid col-md-6 col-sm-6 col-xs-12" onclick="quizMain()" name="3"  type = "image" src ="./Images/ranks.jpg">
-<input class="question1 img-fluid col-md-6 col-sm-6 col-xs-12" onclick="quizMain()" name="2"  type = "image" src ="./Images/field.jpg">
-    </div>
-</div>
-
-
 
 <div class="container-fluid">
-
-    <div class="row">
-
-    <div class = "col-md-6">
-    <label for="q2-2">Happiness is the absence of the striving for happiness.</label>
-    <input type="radio" class = "question" name="2" onclick="quizMain()" id="q2-2">
-    </div>
-
-    <div class = "col-md-6">
-    <label for="q2-1">He who learns but does not think, is lost! He who thinks but does not learn is in great danger.</label>
-    <input type="radio" class = "question2" name="1" onclick="quizMain()" id="q2-1">
-    </div>
-
-    <div class = "col-md-6">
-    <label for="q2-3">It is human nature to choose safety and gain over danger and trouble.</label>
-    <input type="radio" class = "question2" name="3" onclick="quizMain()" id="q2-3">
-    </div>
-
-    <div class = "col-md-6">
-    <label for="q2-4">Suppose we try to locate the cause of disorder, we shall find it lies in the want of mutual love.</label>
-    <input type="radio" class = "question2" name="4" onclick="quizMain()" id="q2-4">
-    </div>
-        </div>
-</div>
-
-<div class = "container-fluid">
-    <div class = "row">
-
-        <div class = "col-md-6">
-
-        <input type="checkbox" onclick="quizMain()" name="3"><label for="q3-3">Strictly follows the letter of the law.</label>
-            </div>
-
-        <div class = "col-md-6">
-
-        <input type="checkbox" onclick="quizMain()" name="4" value=4><label for="q3-4">Ensures the safety of every citizen.</label>
-            </div>
-
-        <div class = "col-md-6">
-
-        <input type="checkbox" onclick="quizMain()" name="2" value=2><label for="q3-2">Does nothing.</label>
-            </div>
-
-            <div class = "col-md-6">
-
-        <input type="checkbox" onclick="quizMain()" name="1" value=1><label for="q3-1">Runs the country like their house, and vice versa.</label>
-                </div>
-
-
+    <div id="quizContainer" class="row">
     </div>
 </div>
 
 
-<div class = "container-fluid">
-    <div class = "row">
-        <div class = "col-md-6">
-        <input type="button" id="q4-4" onclick="quizMain()" name="4" value="Equality">
-        </div>
-        <div class = "col-md-6">
-        <input type="button" id="q4-1" onclick="quizMain()"  name="1" value="Virtue">
-        </div>
-        <div class = "col-md-6">
-        <input type="button" id="q4-2" onclick="quizMain()" name="2" value="Freedom">
-        </div>
-        <div class = "col-md-6">
-        <input type="button" id="q4-3" onclick="quizMain()" name="3" value="Order">
-        </div>
-    </div>
-</div>
-
-<container-fluid>
-<label for="menu">Generally, I think that most people ought to...</label>
-<select class = "menu" onchange="quizMain()">
-    <option disabled selected value> -- select an option -- </option>
-    <option  id="q5-3"  value="3">just try to avoid pain and pursue pleasure.</option>
-    <option id="q5-1" value="1" onchange="quizMain()">know their place and do fulfil their duties to the utmost.</option>
-    <option id="q5-4" value="4" onchange="quizMain()">care for others unconditionally.</option>
-    <option id="q5-2" value="2" onchange="quizMain()">mind their own business.</option>
-
-
-</select>
-</container-fluid>
 
 <script src="BuzzQuiz.js"></script>
+
 </body>
 
 
