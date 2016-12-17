@@ -65,7 +65,6 @@ function getAnswer() {
 
 //Calculates result based off sum of user inputs.
 function computeResult(){
-    alert(answerArray);
     var sum = 0;
     for(var i =0; i < answerArray.length; i++){
         sum = sum + parseInt(answerArray[i]);
